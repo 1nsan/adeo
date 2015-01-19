@@ -1,0 +1,20 @@
+base: &base
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  timeout: 5000
+  username: FGuillocheau
+  password:
+
+development:
+  database: delamaison_dev
+  <<: *base
+
+test:
+  database: delamaison_test
+  <<: *base
+
+production:
+  database: delamaison_prod
+  <<: *base
