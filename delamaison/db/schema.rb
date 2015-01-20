@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20150119162003) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "message_id"
+    t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "messages", ["message_id"], name: "index_messages_on_message_id", using: :btree
+  add_index "messages", ["topic_id"], name: "index_messages_on_topic_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "topics", force: true do |t|

@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.belongs_to :user, index: true
-      t.belongs_to :message, index: true
+      t.belongs_to :topic, index: true
 
       t.timestamps
     end
