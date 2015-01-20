@@ -1,4 +1,161 @@
-.ok
-  ok
-.jardin
-  jardin
+#footer-main
+  #footer_zone_rond
+  #footer-page
+    #footer-page-container
+      #footer_zone
+        #footer_zone_top
+          %span.footer_zone_title Les avis clients
+          #footer_zone_top_1.footer_zone_top_element
+            Votre satisfaction
+            = succeed "est" do
+              %br/
+          #footer_zone_top_2.footer_zone_top_element
+            %a{:href => "http://www.trustpilot.fr/review/www.delamaison.fr", :target => "_blank"}
+              .imgReviews
+                #imgTrustpilot
+              .noteReviews
+                .starRateReviews
+                  .starReviews.numeroEtoile.numeroEtoile4Gris
+                  %span.rateReviews
+                    %span{:itemprop => "average"} 7.3
+                    \/
+                    %span{:itemprop => "best"} 10
+              %span.textReviews 11290 évaluations sur Truspilot
+          #footer_zone_top_3.footer_zone_top_element
+            %a{:href => "http://www.shopzilla.fr/mid--115093/marchand", :target => "_blank"}
+              .imgReviews
+                #imgShopzilla
+              .noteReviews{:itemscope => "", :itemtype => "http://data-vocabulary.org/Review-aggregate"}
+                .starRateReviews{:style => "width: 110px;"}
+                  .starReviews.numeroEtoile.numeroEtoile4Gris
+                    %meta{:content => "0", :itemprop => "rating"}/
+                  %span.rateReviews{:itemprop => "rating", :itemscope => "", :itemtype => "http://data-vocabulary.org/Rating"}
+                    %span{:itemprop => "average"} 4
+                    \/
+                    %span{:itemprop => "best"} 5
+              %span.textReviews
+                %span{:itemprop => "votes"} 9145  évaluations
+                %span{:itemprop => "itemreviewed", :style => "display:none;"} Delamaison.fr
+                sur Shopzilla
+          #footer_zone_top_4.footer_zone_top_element.last-child
+            %a{:href => "https://www.ekomi.fr/avis-clients-delamaisonfr.html", :target => "_blank"}
+              .imgReviews
+                #imgEkomi
+              .noteReviews
+                .starReviews.starReviewsLast.numeroEtoile.numeroEtoile4Gris
+              %span.textReviews évaluations sur Ekomi
+        #footer_zone_separator
+        #footer_zone_separator_button Voir les évaluations
+        #footer_zone_bottom_reviews
+          #footer_reviews
+            .footer_reviews_element
+              .footer_reviews_element_star.numeroEtoile.numeroEtoile5Rose
+              .footer_reviews_element_title Parfait, je commanderai à nouveau!
+              .footer_reviews_element_desc
+                Ayant déjà commandé chez Delamaison.fr, j'ai souhaité acheter un sapin de Noël artificiel.
+                %br>/
+                L'article a été envoyé rapidement, et dans de bonnes conditions, comme pour ma 1ère commande.
+              .footer_reviews_element_pseudo Anais
+              .footer_reviews_element_datetime 18-01-2015 23:20
+            .footer_reviews_element
+              .footer_reviews_element_star.numeroEtoile.numeroEtoile4Rose
+              .footer_reviews_element_title Satisfaite
+              .footer_reviews_element_desc Livraison dans les délais, Aucun souci.
+              .footer_reviews_element_pseudo MATTER67
+              .footer_reviews_element_datetime 18-01-2015 22:22
+            .footer_reviews_element.last-child
+              .footer_reviews_element_star.numeroEtoile.numeroEtoile5Rose
+              .footer_reviews_element_title Tres bien
+              .footer_reviews_element_desc Livraison tres rapide et parfaitement conforme a la commande
+              .footer_reviews_element_pseudo Denis
+              .footer_reviews_element_datetime 18-01-2015 22:21
+          #footer_reviews_close
+        #footer_zone_bottom
+          %span.footer_zone_title Suivez notre actualité
+          #footer_zone_bottom_2.footer_zone_bottom_element
+            #footer_zone_bottom_news_title Inscrivez-vous à nos newsletters
+            #footer_zone_bottom_news_desc
+              Découvrez tout sur la déco, les tendances et les nouveautés des grandes marques.
+              %br/
+              Profitez des ventes privées et autres offres exceptionnelles.
+            #footer_zone_bottom_news_input
+              %form{:action => "create_account.php", :method => "post", :onsubmit => "check_subscribe();return false;"}
+                %input{:name => "newsletter_quick_subscribe", :type => "hidden", :value => "true"}/
+                %input#footer_zone_bottom_input{:maxlength => "50", :name => "email_address", :placeholder => "Votre adresse e-mail", :type => "text"}/
+                %input#footer_zone_bottom_button{:type => "submit", :value => "ENVOYER"}/
+          #footer_zone_bottom_3.footer_zone_bottom_element.last-child
+            #footer_zone_bottom_news_title Devenez notre meilleur fan
+            #footer_zone_bottom_news_logos
+              %a{:href => "http://www.facebook.com/delamaison.fr", :target => "_blank"}
+                .footer_logo.footer_logo_facebook
+              %a{:href => "http://twitter.com/delamaison", :target => "_blank"}
+                .footer_logo.footer_logo_twitter
+              %a{:href => "http://www.youtube.com/user/delamaisonfr", :target => "_blank"}
+                .footer_logo.footer_logo_youtube
+              %a{:href => "https://plus.google.com/100723833224758665122", :target => "_blank"}
+                .footer_logo.footer_logo_google
+              %a{:href => "http://pinterest.com/delamaison/", :target => "_blank"}
+                .footer_logo.footer_logo_pinterest
+              %a{:href => "http://instagram.com/delamaisonfr", :target => "_blank"}
+                .footer_logo.footer_logo_instagram
+              %a{:href => "http://blog-deco-delamaison.fr/", :target => "_blank"}
+                .footer_logo.footer_logo_blog.last
+  #footer-links
+    #footer-backlink
+      #footer_links
+        %a.links_footer{:href => "http://www.delamaison.fr/parrainage.php#"}
+        %a.links_footer{:href => "http://www.delamaison.fr/qui_sommes_nous.php#"} Mieux nous connaître
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "http://www.delamaison.fr/engagements.php#"} Nos engagements
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "/marques.html"} Nos marques
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "http://blog-deco-delamaison.fr/", :target => "_blank"} Blog déco
+        %span.separateurs_footer  | 
+        %a{:href => "customers_comments.php", :title => "témoignages de nos clients"} Avis clients
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "http://www.delamaison.fr/faq.php#"} Faq
+        %span.separateurs_footer  | 
+        %a#popupConseillerSC2.links_footer{:href => "#", :onclick => "return false;", :rel => "nofollow"} Contact
+        %span.separateurs_footer  | 
+        %a{:href => "application-mobile.html", :title => "Application mobile"} Application mobile
+        %div{:style => "height:2px"}
+        / <a class="links_footer" href="http://revue-presse.delamaison.fr/" target="_blank">Revue de presse</a>
+        /
+          <span class=separateurs_footer> | </span>
+          <a class=links_footer href="/vente-soldes.html" title="Soldes, Réductions, promos, bon plans">Soldes</a>
+          <span class=separateurs_footer> | </span>
+        %a.links_footer{:href => "http://www.delamaison.fr/confidentialite.php#"} Mentions legales
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "http://www.delamaison.fr/cgv.php#"} CGV
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "affiliation_partenariat.php"} Affiliation et partenariats
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "contact_us.php"} Contact pro
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "contact_press.php"} Contact presse
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "/recrutement-delamaison.html#"} Rejoignez-nous
+        %span.separateurs_footer  | 
+        %a.links_footer{:href => "http://jeu.delamaison.fr/#"} Jeu concours
+      #footer_condition_promo
+        %a{:href => "#", :onclick => "showLayerOffreSpecial();return false;"}
+          * Conditions des offres promotionnelles en cours
+        ** Tous les stocks s'entendent dans la limite des stocks disponibles. Promotions : Offres dans la limite des stocks disponibles.
+        Les photos des produits ne sont pas contractuelles. Le produit ne comprend
+        pas forcément tous les éléments de la photo. Certaines photos sont
+        la propriété des fabricants des produits considérés.
+        %span#footer_copyright
+          copyright © 2000-2015    elbee sas - tous droits réservés
+    #footer-paiement
+      #footer_logo
+        .sprite_footer.spriteFooter1
+        %a{:href => "#", :onclick => "OpenPopUpCenter('http://partenaires.cofinoga.fr/delamaison.do',836,744);return false;", :style => "float:left"}
+          .sprite_footer.spriteFooter2
+        .sprite_footer.spriteFooter3
+        %a{:href => "http://www.fevad.com/", :style => "float:left;", :target => "_blank"}
+          .sprite_footer.spriteFooter4
+        / div class="sprite_footer spriteFooter5"></div
+        .spriteFooterSeparator
+        .textFooter Delamaison.fr, leader de l'équipement de la maison fait partie du groupe Adeo :
+        .sprite_footer.spriteFooter6
