@@ -15,13 +15,30 @@
     .message
       .message-user
         .user-image
-          =message.user.image_url
+          =image_tag(message.user.image_url, size: "150x100")
         .user-name
           = message.user.name
       .message-title
         =message.title
       .message-content
         = message.content
+  .message
+    .message-user
+      .user-image
+        =image_tag("https://media.licdn.com/mpr/mpr/shrink_500_500/p/4/005/021/3bd/22b1e6a.jpg", size: "150x100")
+      .user-name
+        Gaëtan
+    .message-title
+      Proposition 4
+    .message-content
+      Hey ! Salut Frank ! regarde cette article :)
+      .item-name
+        = Item.first.name
+      .item-image
+        = image_tag Item.first.image_url, size: "150x100"
+      .item-price
+        = Item.first.prix
+
 
 = link_to 'Edit', edit_topic_path(@topic)
 \|
