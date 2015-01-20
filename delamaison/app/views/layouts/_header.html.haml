@@ -1,4 +1,170 @@
 .ok
-  ok
+  <span id="iess" style="behavior:url(#default#userData)"></span>
+
+	<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f26d6edec8&amp;origin=http%3A%2F%2Fwww.delamaison.fr" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f26d6edec8&amp;origin=http%3A%2F%2Fwww.delamaison.fr" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+	<!-- content = index_default --><script>
+	    try{
+	        var tracker55 = new Ga55();
+	        tracker55.aa="./includes/javascript/ga.js";
+	        tracker55.a="UA-1187507-1";
+	        tracker55.c = ".delamaison.fr";
+	        tracker55.f=true;
+	        tracker55.mt=true;
+	        tracker55.y2=["Test_CrossSell",getCookie("__55ab")];
+	        tracker55.g="Home";
+	        try{
+	            tracker55.doTheJob();
+	        }catch(y){try{G55_sanit(y)}catch(y){}};
+	    }catch(e){}
+	</script>
+	<script type="text/javascript">
+	    $j( window ).load(function(){
+	        var accountId = getAccountId();
+	        visitorLoginState(accountId);
+	    })
+	</script><script type="text/javascript">
+	    $j( window ).load(function(){
+	        pushParamterpresent();
+	    })
+	</script>
+	<script type="text/javascript">
+	    var browserVer = parseInt(navigator.appVersion);
+	    if ((browserVer >= 4)) {
+	        var divAttente = '<div id="attente">' + '<b>La page est en cours de chargement....<\/b><br />' + 'Delamaison &copy;' + '<\/div>';
+	        document.write(divAttente);
+	    }
+	    if (/WebKit/.test(navigator.userAgent) && /#$/.test(location.href)) {
+	        $j(document.body).prepend($j('<a />').attr('name', '.'));
+	        location.hash = '#.';
+	    }
+	    if (typeof domloadedfuncs == 'undefined') {
+	        domloadedfuncs = [];
+	        domloaded = false;
+	    }
+	</script><div id="attente" style="display: none;"><b>La page est en cours de chargement....</b><br>Delamaison ©</div>
+
+	<div id="page">
+	  <div id="cookiePoolicy" style="display: none;">
+	    <div id="textcookie">delamaison.fr utilise les cookies pour améliorer votre expérience sur le site ou les
+	      réseaux sociaux, pour mesurer l'audience, mais aussi à des fins marketing avec nos partenaires. En
+	      poursuivant votre navigation, vous acceptez <a href="/cookies_policy.html" style="color: white; text-decoration: underline;"><strong>l'utilisation
+	      des cookies</strong>.</a>
+	    </div>
+	    <div id="pectureCloseCookie" onclick="javascript:closeLayerCookiePolicy()"></div>
+	  </div>
+
+	  <div id="affiliation"></div>
+
+	  <div id="header" style="background-color: #f4f3f3; height: 88px;">
+	    <div id="logo-et-market">
+	      <div class="header-left">
+	        <a href="http://www.delamaison.fr/">
+	          <div id="header_clickHome"></div>
+	        </a>
+	      </div>
+	    </div>
+	    <div class="explorateur_header" id="explorateur_header" style="cursor: pointer;">
+	    </div>
+	    <div id="header_search">
+	      <script>
+	          function testSearchValue(type) {
+	              if (type == 1) {
+	                  if ($j("#chps_search").val() == "") {
+	                      $j("#chps_search").val("");
+	                  } else if (/\S$/.test($j("#chps_search").val())) {
+	                      $j("#chps_search").val($j("#chps_search").val() + " ");
+	                  }
+	              } else {
+	                  if ($j("#chps_search").val() == '') {
+	                      $j("#chps_search").val("")
+	                  }
+	              }
+	          }
+
+	          function testCookiePolicy() {
+	              if(getCookie("CookiePolicy")=="") {
+	                  $j('#cookiePoolicy').css('display', 'inline');
+	              }
+	          }
+	          function closeLayerCookiePolicy() {
+	              if(getCookie("CookiePolicy")=="") {
+	                  document.cookie = "CookiePolicy=true; max-age=" + 60 * 60 * 24 * 395;
+	                  $j('#cookiePoolicy').hide();
+	              }
+	          }
+	      </script>
+	      <!-- End of Google Website Optimizer Control Script -->
+	      <form id="quick_find" name="quick_find" action="http://www.delamaison.fr/" method="get" onsubmit="try{tracker55.fb(&quot;recherche&quot;,&quot;HP&quot;,&quot;clic&quot;)}catch(e){};creatSearchCookie();"><!--zzz--><input type="text" name="q" id="chps_search" value="" onfocus="testSearchValue(1)" onblur="testSearchValue(2)" size="15" maxlength="64" autocomplete="off"><div style="position:absolute;background:white;width:200px;border:solid #9d9691 1px;margin-top:31px; padding:2px 0 2px 5px;text-align:left;display:none;text-transform:none;"></div><input type="submit" class="bouton" value="" id="searchBtn">
+	      </form>    </div>
+	    <script>
+	        domloadedfuncs.push(function () {
+	            $j("span[u]", "#header_wrapper").each(function () {
+	                $j(this).replaceWith('<a class=links_footer href="' + $j(this).attr('u') + '#">' + $j(this).html() + '</a>');
+	            })
+	        });
+	        domloadedfuncs.push(function () {
+	            $j("img[data-original]").lazyload();
+	        });
+
+	        domloadedfuncs.push(function () {
+	            if (!isMobilePad()) {
+	                $j(".lazyLoadAd_places").lazyLoadAd({
+	                    threshold: 200
+	                });
+	            }
+	        });
+	    </script>
+	    <div id="Header_newsletter">
+	      <a href="#" id="popupHotline" onclick="return false;" rel="nofollow">
+	            <span id="Header_contactezNous">
+	            </span>
+	        <div class="telHeader"></div>
+	      </a>
+	    </div>
+	    <div id="Header_blog">
+	      <a href="http://blog-deco-delamaison.fr/" target="_blank" id="blog_dlm" rel="nofollow">
+	        <div class="blogHeader"></div>
+	      </a>
+	    </div>
+	    <div id="UTMenu_log">
+	      <div id="header_account">
+	        <div id="header_account_notconnected">
+
+	          <a href="http://www.delamaison.fr/create_account.php" class="header_right" rel="nofollow">Créer un compte</a>
+	          <span class="trait_header">&nbsp;</span>
+	          <a class="header_account_connexion" href="javascript:NotifyPL();" rel="nofollow">Connexion</a>
+	        </div>
+	        <div id="header_account_connected">
+	          <a class="header_account_connexion" href="logoff.php" rel="nofollow">Déconnexion</a>
+	          <span class="trait_header">&nbsp;</span>
+	          <div class="header_right" id="helloFirstname">Bonjour <span id="header_firstname"></span></div>
+	        </div>
+
+	      </div>
+
+	      <div id="header_wrapper">
+	        <div id="header_wrapper_notconnected">
+	          <a href="http://www.delamaison.fr/shopping_cart.php" rel="nofollow">
+	            <div class="header_right" style="display:inline-block; margin-top:-6px;">
+	              <div id="cart-middle">
+	                <span id="header_panier_a">Mon panier</span>
+	              </div>
+	            </div>
+	          </a>
+	        </div>
+	        <div id="header_wrapper_connected">
+	          <a href="account.php" rel="nofollow" class="header_right">Mon compte</a>
+	          <span class="trait_header">&nbsp;</span>
+	          <a href="http://www.delamaison.fr/shopping_cart.php" rel="nofollow">
+	            <div class="header_right">
+	              <div id="cart-middle">
+	                <span id="header_panier_b">Mon panier</span>
+	              </div>
+	            </div>
+	          </a>
+	        </div>
+	      </div>
+	    </div>
+	  </div>	<!--  Debut menuhead -->
 .jardin
   jardin
