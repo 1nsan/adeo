@@ -1,4 +1,4 @@
-= form_for @item do |f|
+= simple_form_for(@item, html: { class: 'form-horizontal' })do |f|
   - if @item.errors.any?
     #error_explanation
       %h2= "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
@@ -7,28 +7,20 @@
           %li= msg
 
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.input :name
   .field
-    = f.label :image_url
-    = f.text_field :image_url
+    = f.input :image_url
   .field
-    = f.label :prix
     = f.number_field :prix
   .field
-    = f.label :description
-    = f.text_field :description
+    = f.input :description
   .field
-    = f.label :style
-    = f.text_field :style
+    = f.input :style
   .field
-    = f.label :img_link
-    = f.text_field :img_link
+    = f.input :img_link
   .field
-    = f.label :color
-    = f.text_field :color
+    = f.input :color
   .field
-    = f.label :material
-    = f.text_field :material
+    = f.input :material
   .actions
-    = f.submit 'Save'
+    = f.button :submit
