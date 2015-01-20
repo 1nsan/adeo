@@ -11,15 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119130816) do
+ActiveRecord::Schema.define(version: 20150119162003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.string   "image_url"
+    t.integer  "prix"
+    t.text     "description"
+    t.integer  "store_id"
+    t.string   "style"
+    t.string   "img_link"
+    t.string   "color"
+    t.string   "material"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "message_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["message_id"], name: "index_messages_on_message_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "topics", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "topics", ["user_id"], name: "index_topics_on_user_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "email"
+    t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

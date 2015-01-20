@@ -4,7 +4,8 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.string :image_url
       t.integer :prix
-      t.textstore_id :description
+      t.text :description
+      t.integer :store_id
       t.string :style
       t.string :img_link
       t.string :color
