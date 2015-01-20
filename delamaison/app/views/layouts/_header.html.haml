@@ -1,170 +1,391 @@
 .ok
-  <span id="iess" style="behavior:url(#default#userData)"></span>
+	%span#iess{:style => "behavior:url(#default#userData)"}
+		#fb-root.fb_reset
+		  %div{:style => "position: absolute; top: -10000px; height: 0px; width: 0px;"}
+		    %div
+		      %iframe#fb_xdm_frame_http{:allowtransparency => "true", "aria-hidden" => "true", :frameborder => "0", :name => "fb_xdm_frame_http", :scrolling => "no", :src => "http://static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f26d6edec8&origin=http%3A%2F%2Fwww.delamaison.fr", :style => "border: none;", :tabindex => "-1", :title => "Facebook Cross Domain Communication Frame"}
+		      %iframe#fb_xdm_frame_https{:allowtransparency => "true", "aria-hidden" => "true", :frameborder => "0", :name => "fb_xdm_frame_https", :scrolling => "no", :src => "https://s-static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f26d6edec8&origin=http%3A%2F%2Fwww.delamaison.fr", :style => "border: none;", :tabindex => "-1", :title => "Facebook Cross Domain Communication Frame"}
+		  %div{:style => "position: absolute; top: -10000px; height: 0px; width: 0px;"}
+		    %div
+		/ content = index_default
+		:javascript
+		  try{
+		      var tracker55 = new Ga55();
+		      tracker55.aa="./includes/javascript/ga.js";
+		      tracker55.a="UA-1187507-1";
+		      tracker55.c = ".delamaison.fr";
+		      tracker55.f=true;
+		      tracker55.mt=true;
+		      tracker55.y2=["Test_CrossSell",getCookie("__55ab")];
+		      tracker55.g="Home";
+		      try{
+		          tracker55.doTheJob();
+		      }catch(y){try{G55_sanit(y)}catch(y){}};
+		  }catch(e){}
+		:javascript
+		  $j( window ).load(function(){
+		      var accountId = getAccountId();
+		      visitorLoginState(accountId);
+		  })
+		:javascript
+		  $j( window ).load(function(){
+		      pushParamterpresent();
+		  })
+		:javascript
 
-	<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f26d6edec8&amp;origin=http%3A%2F%2Fwww.delamaison.fr" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter/7r8gQb8MIqE.js?version=41#channel=f26d6edec8&amp;origin=http%3A%2F%2Fwww.delamaison.fr" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
-	<!-- content = index_default --><script>
-	    try{
-	        var tracker55 = new Ga55();
-	        tracker55.aa="./includes/javascript/ga.js";
-	        tracker55.a="UA-1187507-1";
-	        tracker55.c = ".delamaison.fr";
-	        tracker55.f=true;
-	        tracker55.mt=true;
-	        tracker55.y2=["Test_CrossSell",getCookie("__55ab")];
-	        tracker55.g="Home";
-	        try{
-	            tracker55.doTheJob();
-	        }catch(y){try{G55_sanit(y)}catch(y){}};
-	    }catch(e){}
-	</script>
-	<script type="text/javascript">
-	    $j( window ).load(function(){
-	        var accountId = getAccountId();
-	        visitorLoginState(accountId);
-	    })
-	</script><script type="text/javascript">
-	    $j( window ).load(function(){
-	        pushParamterpresent();
-	    })
-	</script>
-	<script type="text/javascript">
-	    var browserVer = parseInt(navigator.appVersion);
-	    if ((browserVer >= 4)) {
-	        var divAttente = '<div id="attente">' + '<b>La page est en cours de chargement....<\/b><br />' + 'Delamaison &copy;' + '<\/div>';
-	        document.write(divAttente);
-	    }
-	    if (/WebKit/.test(navigator.userAgent) && /#$/.test(location.href)) {
-	        $j(document.body).prepend($j('<a />').attr('name', '.'));
-	        location.hash = '#.';
-	    }
-	    if (typeof domloadedfuncs == 'undefined') {
-	        domloadedfuncs = [];
-	        domloaded = false;
-	    }
-	</script><div id="attente" style="display: none;"><b>La page est en cours de chargement....</b><br>Delamaison ©</div>
+		#attente{:style => "display: none;"}
+		  %b La page est en cours de chargement....
+		  = succeed "Delamaison" do
+		    %br/
+		#page
+		  #cookiePoolicy{:style => "display: none;"}
+		    #textcookie
+		      delamaison.fr utilise les cookies pour améliorer votre expérience sur le site ou les
+		      réseaux sociaux, pour mesurer l'audience, mais aussi à des fins marketing avec nos partenaires. En
+		      poursuivant votre navigation, vous acceptez
+		      %a{:href => "/cookies_policy.html", :style => "color: white; text-decoration: underline;"}
+		        %strong>
+		          l'utilisation
+		          des cookies
+		        \.
+		    #pectureCloseCookie{:onclick => "javascript:closeLayerCookiePolicy()"}
+		  #affiliation
+		  #header{:style => "background-color: #f4f3f3; height: 88px;"}
+		    #logo-et-market
+		      .header-left
+		        %a{:href => "http://www.delamaison.fr/"}
+		          #header_clickHome
+		    #explorateur_header.explorateur_header{:style => "cursor: pointer;"}
+		    #header_search
+		      :javascript
+		        function testSearchValue(type) {
+		            if (type == 1) {
+		                if ($j("#chps_search").val() == "") {
+		                    $j("#chps_search").val("");
+		                } else if (/\S$/.test($j("#chps_search").val())) {
+		                    $j("#chps_search").val($j("#chps_search").val() + " ");
+		                }
+		            } else {
+		                if ($j("#chps_search").val() == '') {
+		                    $j("#chps_search").val("")
+		                }
+		            }
+		        }
 
-	<div id="page">
-	  <div id="cookiePoolicy" style="display: none;">
-	    <div id="textcookie">delamaison.fr utilise les cookies pour améliorer votre expérience sur le site ou les
-	      réseaux sociaux, pour mesurer l'audience, mais aussi à des fins marketing avec nos partenaires. En
-	      poursuivant votre navigation, vous acceptez <a href="/cookies_policy.html" style="color: white; text-decoration: underline;"><strong>l'utilisation
-	      des cookies</strong>.</a>
-	    </div>
-	    <div id="pectureCloseCookie" onclick="javascript:closeLayerCookiePolicy()"></div>
-	  </div>
+		        function testCookiePolicy() {
+		            if(getCookie("CookiePolicy")=="") {
+		                $j('#cookiePoolicy').css('display', 'inline');
+		            }
+		        }
+		        function closeLayerCookiePolicy() {
+		            if(getCookie("CookiePolicy")=="") {
+		                document.cookie = "CookiePolicy=true; max-age=" + 60 * 60 * 24 * 395;
+		                $j('#cookiePoolicy').hide();
+		            }
+		        }
+		      / End of Google Website Optimizer Control Script
+		      %form#quick_find{:action => "http://www.delamaison.fr/", :method => "get", :name => "quick_find", :onsubmit => "try{tracker55.fb(\"recherche\",\"HP\",\"clic\")}catch(e){};creatSearchCookie();"}
+		        / zzz
+		        %input#chps_search{:autocomplete => "off", :maxlength => "64", :name => "q", :onblur => "testSearchValue(2)", :onfocus => "testSearchValue(1)", :size => "15", :type => "text", :value => ""}/
+		        %div{:style => "position:absolute;background:white;width:200px;border:solid #9d9691 1px;margin-top:31px; padding:2px 0 2px 5px;text-align:left;display:none;text-transform:none;"}
+		        %input#searchBtn.bouton{:type => "submit", :value => ""}/
+		    :javascript
+		      domloadedfuncs.push(function () {
+		          $j("span[u]", "#header_wrapper").each(function () {
+		              $j(this).replaceWith('<a class=links_footer href="' + $j(this).attr('u') + '#">' + $j(this).html() + '</a>');
+		          })
+		      });
+		      domloadedfuncs.push(function () {
+		          $j("img[data-original]").lazyload();
+		      });
 
-	  <div id="affiliation"></div>
-
-	  <div id="header" style="background-color: #f4f3f3; height: 88px;">
-	    <div id="logo-et-market">
-	      <div class="header-left">
-	        <a href="http://www.delamaison.fr/">
-	          <div id="header_clickHome"></div>
-	        </a>
-	      </div>
-	    </div>
-	    <div class="explorateur_header" id="explorateur_header" style="cursor: pointer;">
-	    </div>
-	    <div id="header_search">
-	      <script>
-	          function testSearchValue(type) {
-	              if (type == 1) {
-	                  if ($j("#chps_search").val() == "") {
-	                      $j("#chps_search").val("");
-	                  } else if (/\S$/.test($j("#chps_search").val())) {
-	                      $j("#chps_search").val($j("#chps_search").val() + " ");
-	                  }
-	              } else {
-	                  if ($j("#chps_search").val() == '') {
-	                      $j("#chps_search").val("")
-	                  }
-	              }
-	          }
-
-	          function testCookiePolicy() {
-	              if(getCookie("CookiePolicy")=="") {
-	                  $j('#cookiePoolicy').css('display', 'inline');
-	              }
-	          }
-	          function closeLayerCookiePolicy() {
-	              if(getCookie("CookiePolicy")=="") {
-	                  document.cookie = "CookiePolicy=true; max-age=" + 60 * 60 * 24 * 395;
-	                  $j('#cookiePoolicy').hide();
-	              }
-	          }
-	      </script>
-	      <!-- End of Google Website Optimizer Control Script -->
-	      <form id="quick_find" name="quick_find" action="http://www.delamaison.fr/" method="get" onsubmit="try{tracker55.fb(&quot;recherche&quot;,&quot;HP&quot;,&quot;clic&quot;)}catch(e){};creatSearchCookie();"><!--zzz--><input type="text" name="q" id="chps_search" value="" onfocus="testSearchValue(1)" onblur="testSearchValue(2)" size="15" maxlength="64" autocomplete="off"><div style="position:absolute;background:white;width:200px;border:solid #9d9691 1px;margin-top:31px; padding:2px 0 2px 5px;text-align:left;display:none;text-transform:none;"></div><input type="submit" class="bouton" value="" id="searchBtn">
-	      </form>    </div>
-	    <script>
-	        domloadedfuncs.push(function () {
-	            $j("span[u]", "#header_wrapper").each(function () {
-	                $j(this).replaceWith('<a class=links_footer href="' + $j(this).attr('u') + '#">' + $j(this).html() + '</a>');
-	            })
-	        });
-	        domloadedfuncs.push(function () {
-	            $j("img[data-original]").lazyload();
-	        });
-
-	        domloadedfuncs.push(function () {
-	            if (!isMobilePad()) {
-	                $j(".lazyLoadAd_places").lazyLoadAd({
-	                    threshold: 200
-	                });
-	            }
-	        });
-	    </script>
-	    <div id="Header_newsletter">
-	      <a href="#" id="popupHotline" onclick="return false;" rel="nofollow">
-	            <span id="Header_contactezNous">
-	            </span>
-	        <div class="telHeader"></div>
-	      </a>
-	    </div>
-	    <div id="Header_blog">
-	      <a href="http://blog-deco-delamaison.fr/" target="_blank" id="blog_dlm" rel="nofollow">
-	        <div class="blogHeader"></div>
-	      </a>
-	    </div>
-	    <div id="UTMenu_log">
-	      <div id="header_account">
-	        <div id="header_account_notconnected">
-
-	          <a href="http://www.delamaison.fr/create_account.php" class="header_right" rel="nofollow">Créer un compte</a>
-	          <span class="trait_header">&nbsp;</span>
-	          <a class="header_account_connexion" href="javascript:NotifyPL();" rel="nofollow">Connexion</a>
-	        </div>
-	        <div id="header_account_connected">
-	          <a class="header_account_connexion" href="logoff.php" rel="nofollow">Déconnexion</a>
-	          <span class="trait_header">&nbsp;</span>
-	          <div class="header_right" id="helloFirstname">Bonjour <span id="header_firstname"></span></div>
-	        </div>
-
-	      </div>
-
-	      <div id="header_wrapper">
-	        <div id="header_wrapper_notconnected">
-	          <a href="http://www.delamaison.fr/shopping_cart.php" rel="nofollow">
-	            <div class="header_right" style="display:inline-block; margin-top:-6px;">
-	              <div id="cart-middle">
-	                <span id="header_panier_a">Mon panier</span>
-	              </div>
-	            </div>
-	          </a>
-	        </div>
-	        <div id="header_wrapper_connected">
-	          <a href="account.php" rel="nofollow" class="header_right">Mon compte</a>
-	          <span class="trait_header">&nbsp;</span>
-	          <a href="http://www.delamaison.fr/shopping_cart.php" rel="nofollow">
-	            <div class="header_right">
-	              <div id="cart-middle">
-	                <span id="header_panier_b">Mon panier</span>
-	              </div>
-	            </div>
-	          </a>
-	        </div>
-	      </div>
-	    </div>
-	  </div>	<!--  Debut menuhead -->
+		      domloadedfuncs.push(function () {
+		          if (!isMobilePad()) {
+		              $j(".lazyLoadAd_places").lazyLoadAd({
+		                  threshold: 200
+		              });
+		          }
+		      });
+		    #Header_newsletter
+		      %a#popupHotline{:href => "#", :onclick => "return false;", :rel => "nofollow"}
+		        %span#Header_contactezNous
+		        .telHeader
+		    #Header_blog
+		      %a#blog_dlm{:href => "http://blog-deco-delamaison.fr/", :rel => "nofollow", :target => "_blank"}
+		        .blogHeader
+		    #UTMenu_log
+		      #header_account
+		        #header_account_notconnected
+		          %div
+		            %ul#menu
+		              %li
+		                %a{:href => "#"} Labo déco
+		              %li
+		                %a{:href => "#"} Poser une question
+		              %li
+		                %a{:href => "#"} Voir les questions
+		          %span.trait_header  
+		          %a.header_account_connexion{:href => "javascript:NotifyPL();", :rel => "nofollow"} Connexion
+		        #header_account_connected
+		          %a.header_account_connexion{:href => "logoff.php", :rel => "nofollow"} Déconnexion
+		          %span.trait_header  
+		          #helloFirstname.header_right
+		            Bonjour
+		            %span#header_firstname
+		      #header_wrapper
+		        #header_wrapper_notconnected
+		          %a{:href => "http://www.delamaison.fr/shopping_cart.php", :rel => "nofollow"}
+		            .header_right{:style => "display:inline-block; margin-top:-6px;"}
+		              #cart-middle
+		                %span#header_panier_a Mon panier
+		        #header_wrapper_connected
+		          %a.header_right{:href => "account.php", :rel => "nofollow"} Mon compte
+		          %span.trait_header  
+		          %a{:href => "http://www.delamaison.fr/shopping_cart.php", :rel => "nofollow"}
+		            .header_right
+		              #cart-middle
+		                %span#header_panier_b Mon panier
+		  / Debut menuhead
+		  #menu_haut{:style => "position: static;"}
+		    %a{:href => "/"}
+		      .UTMenu_accueil
+		        .UTMenu_accueilImg
+		    #UTMenu
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Meubles
+		          .puceHeader
+		          %a{:href => "/meubles-c-68.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Meubles
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/meubles-c-68.html"} Accueil Meubles
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-meubles-c-68.html"} Marques Meubles
+		          %a{:href => "/lit-c-68_3161.html"} Lit
+		          %a{:href => "/table-c-68_3397.html"} Table
+		          %a{:href => "/chaise-c-68_3396.html"} Chaise
+		          %a{:href => "/buffet-design-c-68_1824.html"} Buffet
+		          %a{:href => "/armoire-c-68_3390.html"} Armoire
+		          %a{:href => "/meubles-tv-c-68_157.html"} Meuble TV
+		          %a{:href => "/tabouret-pouf-c-68_3402.html"} Tabouret / Pouf
+		          %a{:href => "/les-bureaux-c-68_154.html"} Meuble de bureau
+		          %a{:href => "/etagere-bibliotheque-c-68_3371.html"} Etagère / Bibliothèque
+		          %a{:href => "/meuble-rangement-c-68_3374.html"} Meuble de rangement
+		          %a{:href => "/salles-bains-c-68_272.html"} Meuble salle de bain
+		          %a{:href => "/meuble-cuisine-c-68_2583.html"} Meuble cuisine
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_DeacuteBcoration
+		          .puceHeader
+		          %a{:href => "/decoration-c-65.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Décoration
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/decoration-c-65.html"} Accueil Décoration
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-decoration-c-65.html"} Marques Décoration
+		          %a{:href => "/decorations-fete-c-65_508.html"} Sapin / Décoration Noel
+		          %a{:href => "/tapis-c-65_305.html"} Tapis / Paillasson
+		          %a{:href => "/miroir-c-65_2719.html"} Miroir
+		          %a{:href => "/rangements-c-65_102.html"} Petit rangement
+		          %a{:href => "/boite-coffre-c-65_3408.html"} Boite / Coffre
+		          %a{:href => "/deco-murale-c-65_1660.html"} Décoration murale
+		          %a{:href => "/horloges-c-65_696.html"} Horloge
+		          %a{:href => "/deco-lumineuse-c-65_3633.html"} Déco lumineuse
+		          %a{:href => "/salle-bain-c-65_109.html"} Décoration salle de bain
+		          %a{:href => "/vase-fleurs-artificielles-plante-c-65_2720.html"} Plantes artificielles
+		          %a{:href => "/vase-c-65_2721.html"} Vase
+		          %a{:href => "/bougie-bougeoir-photophore-c-65_2713.html"} Bougie / Bougeoir / Photophore
+		          %span{:u => "/cheque-cadeau-c-1017_2960.html"} Chèques cadeaux
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Lingedemaison
+		          .puceHeader
+		          %a{:href => "/linge-maison-c-56.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Linge de maison
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/linge-maison-c-56.html"} Accueil Linge de maison
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-linge-maison-c-56.html"} Marques Linge de maison
+		          %a{:href => "/linge-de-lit-c-56_57.html"} Linge de lit
+		          %span{:u => "/literie-deco-c-70_1222.html"} Accessoire literie
+		          %a{:href => "/linge-table-c-56_85.html"} Linge de table
+		          %a{:href => "/linge-toilette-bain-c-56_377.html"} Linge de bain
+		          %a{:href => "/linge-cuisine-c-56_2771.html"} Linge de cuisine
+		          %span{:u => "/coussins-c-65_1167.html"} Coussin
+		          %a{:href => "/housse-c-56_3579.html"} Housse
+		          %a{:href => "/store-rideaux-c-56_2773.html"} Store
+		          %a{:href => "/rideau-voilage-c-56_3309.html"} Rideau / Voilage
+		          %span{:u => "/couettes-oreillers-c-56_424.html"} Couette / Oreiller / Traversin
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Artsdelatable
+		          .puceHeader
+		          %a{:href => "/arts-table-c-67.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Arts de la table
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/arts-table-c-67.html"} Accueil Arts de la table
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-arts-table-c-67.html"} Marques Arts de la table
+		          %a{:href => "/la-table-c-67_121.html"} Assiette
+		          %a{:href => "/couvert-c-67_1504.html"} Couvert
+		          %a{:href => "/verre-c-67_1514.html"} Verre
+		          %a{:href => "/plat-c-67_1530.html"} Plat
+		          %span{:u => "/cafetiere-c-3_3320.html"} Cafetière
+		          %a{:href => "/petits-dejeuners-c-67_182.html"} Petit déjeuner
+		          %a{:href => "/aperitifs-cocktails-c-67_280.html"} Cocktail / Apéritif
+		          %a{:href => "/autour-du-vin-c-67_88.html"} Oenologie
+		          %a{:href => "/deco-accessoire-table-c-67_1523.html"} Decoration de table
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Cuisine
+		          .puceHeader
+		          %a{:href => "/cuisine-c-1289.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Cuisine
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/cuisine-c-1289.html"} Accueil Cuisine
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-cuisine-c-1289.html"} Marques Cuisine
+		          %a{:href => "/rangement-cuisine-c-1289_3475.html"} Rangement de la cuisine
+		          %a{:href => "/rangement-poussette-marche-c-1289_2755.html"} Cabas / Courses
+		          %a{:href => "/conservation-c-1289_3029.html"} Conservation
+		          %a{:href => "/cuisson-c-1289_2732.html"} Cuisson
+		          %span{:u => "/preparation-culinaire-c-3_17.html"} Préparation culinaire
+		          %a{:href => "/decoration-patisserie-c-1289_2753.html"} Matériel de pâtisserie
+		          %span{:u => "/cafetiere-c-3_3320.html"} Cafetière
+		          %a{:href => "/petits-dejeuners-c-67_182.html"} Petit déjeuner
+		          %a{:href => "/decoupe-planche-decouper-c-1289_2748.html"} Couteau / Planche à découper
+		          %a{:href => "/cuisine-monde-c-1289_1454.html"} Cuisine conviviale
+		          %a{:href => "/plat-c-67_1530.html"} Plat
+		          %a{:href => "/meuble-cuisine-c-68_2583.html"} Meuble de cuisine
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_ElectromeacuteBnager
+		          .puceHeader
+		          %a{:href => "/gros-electromenager-c-1418.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Electroménager
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/gros-electromenager-c-1418.html"} Accueil Electroménager
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-gros-electromenager-c-1418.html"} Marques Electroménager
+		          %a{:href => "/chauffage-c-1418_522.html"} Chauffage d'appoint
+		          %a{:href => "/caves-a-vin-c-1418_1140.html"} Cave à vin
+		          %a{:href => "/cuisinieres-c-1418_405.html"} Cuisinière / Piano
+		          %a{:href => "/lavelinge-c-1418_390.html"} Lave linge
+		          %a{:href => "/hotte-encastrable-c-1418_1680.html"} Hotte aspirante
+		          %a{:href => "/refrigerateurs-c-1418_398.html"} Réfrigérateur
+		          %a{:href => "/four-encastrable-c-1418_1683.html"} Four
+		          %a{:href => "/table-cuisson-encastrable-c-1418_1679.html"} Plaque de cuisson
+		          %a{:href => "/four-micro-ondes-c-1418_2613.html"} Micro ondes
+		          %a{:href => "/lavevaisselle-c-1418_395.html"} Lave vaisselle
+		          %span{:u => "/evier-cuisine-c-1418_3525.html"} Evier de cuisine
+		          %a{:href => "/congelateurs-c-1418_402.html"} Congélateur
+		          %span{:u => "/soin-linge-c-3_4.html"} Repassage / Linge
+		          %span{:u => "/maison-pratique-c-3_546.html"} Entretien maison
+		          %span{:u => "/aspirateurs-c-3_639.html"} Aspirateur
+		          %a{:href => "/ventilateur-c-1418_3360.html"} Ventilateur
+		          %a{:href => "/climatiseur-ventilateur-c-1418_45.html"} Climatiseur
+		          %a{:href => "/traitement-air-c-1418_2659.html"} Traitement air
+		          %span{:u => "/hygiene-beaute-c-3_1278.html"} Hygiène et beauté
+		          %a{:href => "/accessoire-electromenager-c-1418_2980.html"} Accessoire électroménager
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Mobilierdejardin
+		          .puceHeader
+		          %a{:href => "/jardin-c-66.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Mobilier de jardin
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/jardin-c-66.html"} Accueil Mobilier de jardin
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-jardin-c-66.html"} Marques Mobilier de jardin
+		          %a{:href => "/eclairage-jardin-c-66_1619.html"} Luminaire extérieur
+		          %a{:href => "/amenagement-jardin-c-66_814.html"} Aménagement du jardin
+		          %a{:href => "/abris-dexterieur-c-66_569.html"} Rangement jardin
+		          %a{:href => "/jardinage-c-66_3144.html"} Jardinage
+		          %span{:u => "/chauffage-jardin-c-66_3103.html"} Chauffage de jardin
+		          %a{:href => "/cuisine-dete-c-66_3595.html"} Cuisine d'été
+		          %a{:href => "/meubles-jardin-c-66_244.html"} Salon de jardin
+		          %a{:href => "/table-jardin-c-66_2158.html"} Table de jardin
+		          %a{:href => "/chaise-jardin-c-66_2547.html"} Chaise de jardin
+		          %a{:href => "/fauteuil-jardin-banc-c-66_2548.html"} Fauteuil de jardin
+		          %a{:href => "/coin-sieste-c-66_791.html"} Chaise longue / Hamac
+		          %a{:href => "/jardin-enfants-c-585_610.html"} Jardin des enfants
+		          %a{:href => "/tonnelle-voile-c-66_3102.html"} Voile parasol et tonnelle
+		          %a{:href => "/piscine-jardin-c-66_3307.html"} Piscine de jardin
+		          %a{:href => "/decoration-jardin-c-66_3658.html"} Décoration du jardin
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_CanapeacuteBsetfauteuils
+		          .puceHeader
+		          %a{:href => "/canapes-fauteuils-c-1287.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Canapés et fauteuils
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/canapes-fauteuils-c-1287.html"} Accueil Canapés et fauteuils
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-canapes-fauteuils-c-1287.html"} Marques Canapés et fauteuils
+		          %a{:href => "/canape-c-1287_3109.html"} Canapé
+		          %a{:href => "/canape-convertible-c-1287_3114.html"} Canapé convertible
+		          %a{:href => "/fauteuil-reposepieds-c-1287_1332.html"} Fauteuil
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Luminaires
+		          .puceHeader
+		          %a{:href => "/luminaires-c-1288.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Luminaires
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/luminaires-c-1288.html"} Accueil Luminaires
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-luminaires-c-1288.html"} Marques Luminaires
+		          %a{:href => "/eclairage-interieur-c-1288_2790.html"} Luminaire intérieur
+		          %a{:href => "/ampoule-c-1288_1391.html"} Ampoule
+		          %a{:href => "/eclairage-enfant-c-585_1096.html"} Luminaire enfant
+		          %a{:href => "/eclairage-jardin-c-66_1619.html"} Luminaire extérieur
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Enfants
+		          .puceHeader
+		          %a{:href => "/enfants-c-585.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Enfants
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/enfants-c-585.html"} Accueil Enfants
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-enfants-c-585.html"} Marques Enfants
+		          %a{:href => "/meubles-enfants-c-585_609.html"} Meuble enfant
+		          %a{:href => "/literie-enfant-c-585_2835.html"} Literie enfant
+		          %a{:href => "/linge-enfants-c-585_588.html"} Linge enfant
+		          %a{:href => "/eclairage-enfant-c-585_1096.html"} Luminaire enfant
+		          %a{:href => "/accessoires-enfants-c-585_616.html"} Décoration enfant
+		          %a{:href => "/pour-table-c-585_617.html"} Vaisselle enfant
+		          %span{:u => "/petit-electromenager-c-585_1376.html"} Puériculture
+		          %a{:href => "/piscine-jardin-c-66_3307.html"} Piscine de jardin
+		          %a{:href => "/jardin-enfants-c-585_610.html"} Jardin des enfants
+		          %a{:href => "/jeux-jouets-c-585_843.html"} Jeux / Jouets
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Literie
+		          .puceHeader
+		          %a{:href => "/literie-c-70.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Literie
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          .UTMenu_div_accueil
+		            %a{:href => "/literie-c-70.html"} Accueil Literie
+		          .UTMenu_div_marque
+		            %a{:href => "/marques-literie-c-70.html"} Marques Literie
+		          %a{:href => "/matelas-c-70_208.html"} Matelas
+		          %a{:href => "/sommiers-c-70_212.html"} Sommier
+		          %span{:u => "/literie-deco-c-70_1222.html"} Accessoire literie
+		          %a{:href => "/lit-c-68_3161.html"} Lit
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_VenteprivEe
+		          .puceHeader
+		          %a.relief{:href => "./vente-privee.html", :onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "new UTMenu(event);"} Vente privée
+		        .UTMenu_div{:onmouseout => "UTMenu.hasMouse=false;", :onmouseover => "UTMenu.hasMouse=true;"}
+		          %a{:href => "/meubles-c-68.html#anchor_VF"} Meubles
+		          %a{:href => "/decoration-c-65.html#anchor_VF"} Décoration
+		          %a{:href => "/linge-maison-c-56.html#anchor_VF"} Linge de maison
+		          %a{:href => "/arts-table-c-67.html#anchor_VF"} Arts de la table
+		          %a{:href => "/cuisine-c-1289.html#anchor_VF"} Cuisine
+		          %a{:href => "/gros-electromenager-c-1418.html#anchor_VF"} Electroménager
+		          %a{:href => "/jardin-c-66.html#anchor_VF"} Mobilier de jardin
+		          %a{:href => "/canapes-fauteuils-c-1287.html#anchor_VF"} Canapés et fauteuils
+		          %a{:href => "/luminaires-c-1288.html#anchor_VF"} Luminaires
+		          %a{:href => "/enfants-c-585.html#anchor_VF"} Enfants
+		          %a{:href => "/literie-c-70.html#anchor_VF"} Literie
+		      .UTMenu_univer
+		        .UTMenu_title
+		          .puceHeader
+		          %a.relief{:href => "/styles-tendances.html"} Styles
+		      .UTMenu_univer
+		        .UTMenu_title.UTMenu_title_Soldes
+		          .puceHeader
+		          %a.relief{:href => "/vente-soldes.html", :style => "color:#b30101;"} Soldes et promotions
+		  / Fin menuhead
 .jardin
   jardin
