@@ -6,12 +6,22 @@
 %p
   %b Content:
   = @topic.content
+
 %p
   %b User:
-  = @topic.user_id
-%p
-  %b User:
-  = @topic.user
+  = @topic.user.name
+
+  - Message.where(topic_id: @topic.id).each do |message|
+    .message
+      .message-user
+        .user-image
+          =message.user.image_url
+        .user-name
+          = message.user.name
+      .message-title
+        =message.title
+      .message-content
+        = message.content
 
 = link_to 'Edit', edit_topic_path(@topic)
 \|
