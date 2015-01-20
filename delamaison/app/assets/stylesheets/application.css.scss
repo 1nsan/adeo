@@ -26,6 +26,16 @@
 * Style generique des balises *
 *******************************/
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.btn-primary, .btn-danger, .btn-warning {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 html {
     margin: 0px;
     padding: 0px;

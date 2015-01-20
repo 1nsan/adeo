@@ -1,44 +1,55 @@
-%p#notice= notice
 
-%p
-  %b Title:
-  = @topic.title
-%p
-  %b Content:
-  = @topic.content
+.topics
+  %p#notice= notice
 
-%p
-  %b User:
-  = @topic.user.name
+  %p
+    %b Title:
+    = @topic.title
+  %p
+    %b Content:
+    = @topic.content
 
-  - Message.where(topic_id: @topic.id).each do |message|
+  %p
+    %b User:
+    = @topic.user.name
+  .styles
+    %b
+      Styles
+    .styles-btn
+      .btn-primary
+        = @topic.salon
+      .btn-danger
+        = @topic.imprime
+      .btn-warning
+        = @topic.interieur
+
+    - Message.where(topic_id: @topic.id).each do |message|
+      .message
+        .message-user
+          .user-image
+            =image_tag(message.user.image_url, size: "150x100")
+          .user-name
+            = message.user.name
+        .message-title
+          =message.title
+        .message-content
+          = message.content
     .message
       .message-user
         .user-image
-          =image_tag(message.user.image_url, size: "150x100")
+          =image_tag("https://media.licdn.com/mpr/mpr/shrink_500_500/p/4/005/021/3bd/22b1e6a.jpg", size: "150x100")
         .user-name
-          = message.user.name
+          Gaëtan
       .message-title
-        =message.title
+        Proposition 4
       .message-content
-        = message.content
-  .message
-    .message-user
-      .user-image
-        =image_tag("https://media.licdn.com/mpr/mpr/shrink_500_500/p/4/005/021/3bd/22b1e6a.jpg", size: "150x100")
-      .user-name
-        Gaëtan
-    .message-title
-      Proposition 4
-    .message-content
-      Hey ! Salut Frank ! regarde cette article :)
-      .item-name
-        = Item.first.name
-      .item-image
-        = image_tag Item.first.image_url, size: "150x100"
-      .item-price
-        = Item.first.prix
-
+        Hey ! Salut Frank ! regarde cette article :)
+        .item-name
+          = Item.first.name
+        .item-image
+          = image_tag Item.first.image_url, size: "150x100"
+        .item-price
+          = Item.first.prix
 
 = link_to 'Edit', edit_topic_path(@topic)
 \|
