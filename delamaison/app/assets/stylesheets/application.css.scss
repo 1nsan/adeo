@@ -29,6 +29,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.jumbotron {
+  background-image: url('d.jpg');
+  * {
+    color: white;
+  }
+}
+
+.jumbotron-menu *{
+  display: inline;
+}
 
 .btn-primary, .btn-danger, .btn-warning {
   display: inline;

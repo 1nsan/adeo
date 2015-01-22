@@ -1,35 +1,38 @@
-%h1 Listing items
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th Image url
-      %th Prix
-      %th Description
-      %th Style
-      %th Img link
-      %th Color
-      %th Material
-      %th
-      %th
-      %th
-      
-  %tbody
-    - @items.each do |item|
-      %tr
-        %td= item.name
-        %td= item.image_url
-        %td= item.prix
-        %td= item.description
-        %td= item.style
-        %td= item.img_link
-        %td= item.color
-        %td= item.material
-        %td= link_to 'Show', item
-        %td= link_to 'Edit', edit_item_path(item)
-        %td= link_to 'Destroy', item, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Item', new_item_path
+.jumbotron
+  .jumbotron-title
+    %h1
+      Inspirations & Solutions Pour La Maison
+  .jumbotron-menu
+    .je-cherche{style: "background-color: brown;"}
+      Je cherche
+      .dropdown
+        %a.dropdown-toggle#dropdownMenu1{:href => "#", "role" => "button", "data-toggle" => "dropdown", "data-target" => "#", style: "background-color: white;"}
+          "......................................."
+        %ul.dropdown-menu{"role" => "menu"}
+          %li
+            %a{:href => "#link1"}
+              une idée
+            %a{:href => "#link2"}
+              une couleur
+            %a{:href => "#link3"}
+              un luminaire
+            %a{:href => "#link4"}
+              un meuble
+    .pour{style: "background-color: brown;"}
+      pour
+      .dropdown
+        %a.dropdown-toggle#dropdownMenu1{:href => "#", "role" => "button", "data-toggle" => "dropdown", "data-target" => "#", style: "background-color: white;"}
+          "......................................."
+        %ul.dropdown-menu{"role" => "menu"}
+          %li
+            %a{:href => "#link1"}
+              ma chambre
+            %a{:href => "#link2"}
+              ma cuisine
+            %a{:href => "#link3"}
+              ma salle de bain
+            %a{:href => "#link4"}
+              mon salon
+  .subtitle-jumbotron
+    .btn
+      Découvrir la communauté
